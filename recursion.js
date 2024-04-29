@@ -13,12 +13,27 @@
 // console.log(someOfNumber(15));
 
 // Some of number by recursive way
-function someOfNumber(n) {
-  if (n <= 0) {
-    console.log("return 0");
+// function someOfNumber(n) {
+//   if (n <= 0) {
+//     console.log("return 0");
+//     return 0;
+//   }
+
+//   return n + someOfNumber(n - 1);
+// }
+// console.log(someOfNumber(10));
+
+// some of array using recursion
+
+function sumOfArray(arr) {
+  if (arr.length === 0) {
     return 0;
   }
 
-  return n + someOfNumber(n - 1);
+  const slicedArray = arr.slice(1);
+  return arr[0] + sumOfArray(slicedArray);
 }
-console.log(someOfNumber(10));
+
+const array = [45, 34, 2];
+
+console.log(sumOfArray(array));
